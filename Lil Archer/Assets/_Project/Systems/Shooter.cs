@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Shooter : MonoBehaviour
 {
 	[SerializeField] Transform _arrowPlaceholder;
 	[SerializeField] GameObject _arrowPrefab;

@@ -2,9 +2,9 @@
 
 public class ArrowController : MonoBehaviour
 {
-	GameManager _gameManager;
+	Shooter _gameManager;
 
-	public void Init(GameManager gameManager)
+	public void Init(Shooter gameManager)
 	{
 		_gameManager = gameManager;
 	}
