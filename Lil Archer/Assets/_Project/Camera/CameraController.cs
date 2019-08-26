@@ -7,6 +7,7 @@ namespace Project
 	{
 		public float rotationSpeed;
 
+		#region --------------------unity messages
 		void Start()
 		{
 			_transform = transform;
@@ -23,5 +24,6 @@ namespace Project
 		Transform _transform;
 		float yaw;
 		float pitch;
-	} 
+		#endregion
+	}
 }

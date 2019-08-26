@@ -12,8 +12,9 @@ namespace Project
 		#region --------------------interface
 		public void ShootArrow(Vector3 shootingOrigin, Quaternion direction, float shootingForce)
 		{
-			GameObject arrow = spawnArrow(shootingOrigin, direction);
-			arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * shootingForce);
+			ArrowController arrow = spawnArrow(shootingOrigin, direction);
+
+			arrow.Fly(shootingForce);
 		}
 		#endregion
 
@@ -25,7 +26,7 @@ namespace Project
 		#endregion
 
 		#region --------------------details
-		GameObject spawnArrow(Vector3 shootingOrigin, Quaternion direction)
+		ArrowController spawnArrow(Vector3 shootingOrigin, Quaternion direction)
 		{
 			GameObject result;
 
@@ -34,23 +35,20 @@ namespace Project
 
 			result = _arrowPool[_currentArrowIndex];
 			_currentArrowIndex++;
-
-
+			
 			result.transform.SetPositionAndRotation(shootingOrigin, direction);
-			result.SetActive(true);
 
-			return result;
+			return result.GetComponent<ArrowController>();
 		}
 		[SerializeField] int _arrowPoolSize;
 		int _currentArrowIndex;
-		List<GameObject> _arrowPool;
+		List<GameObject> _arrowPool = new List<GameObject>();
 
 		void initializeArrowPool()
 		{
 			for (int i = 0; i < _arrowPoolSize; i++)
 			{
 				GameObject arrow = Instantiate(_arrowPrefab);
-				arrow.SetActive(false);
 				_arrowPool.Add(arrow);
 			}
 
