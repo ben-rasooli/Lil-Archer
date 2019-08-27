@@ -6,6 +6,7 @@ namespace Project
 	public class TabletInput : MonoBehaviour
 	{
 		#region --------------------dependencies
+		[SerializeField] Transform _bow;
 		[SerializeField] Transform _shootingOrigin;
 		#endregion
 
@@ -17,6 +18,20 @@ namespace Project
 
 		void Update()
 		{
+			if (Input.GetMouseButton(0))
+			{
+				Vector2 touchPosition = getTouchPositionWithInvertedX();
+
+				if (isTouchWithinShootingBoundary(touchPosition))
+				{
+					Vector2 shootingTouchOrigin = _shootingTouchArea.rectTransform.pivot;
+					Vector2 touchVector = touchPosition - shootingTouchOrigin;
+					float angle = Vector2.Angle(Vector2.left, touchVector);
+
+					_bow.rotation = Quaternion.Euler(-angle, _bow.eulerAngles.y, _bow.eulerAngles.z);
+				}
+			}
+
 			if (Input.GetMouseButtonUp(0))
 			{
 				Vector2 touchPosition = getTouchPositionWithInvertedX();
@@ -26,7 +41,8 @@ namespace Project
 					Vector2 shootingTouchOrigin = _shootingTouchArea.rectTransform.pivot;
 					Vector2 touchVector = touchPosition - shootingTouchOrigin;
 					float angle = Vector2.Angle(Vector2.left, touchVector);
-					Quaternion direction = Quaternion.AngleAxis(-angle, Vector3.right);
+					//Quaternion direction = Quaternion.AngleAxis(-angle, _shootingOrigin.right);
+					Quaternion direction = _shootingOrigin.rotation;
 
 					float shootingForce = ((touchPosition - shootingTouchOrigin).magnitude / _shootingTouchArea.rectTransform.rect.width) * _bowStrength;
 
