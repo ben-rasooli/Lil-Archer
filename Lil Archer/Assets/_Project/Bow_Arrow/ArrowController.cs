@@ -36,6 +36,7 @@ namespace Project
 		{
 			if (collision.gameObject.tag == "Arrow")
 				return;
+
 			_rigidbody.useGravity = false;
 			_rigidbody.isKinematic = true;
 		}

@@ -5,7 +5,9 @@ namespace Project
 {
 	public class TabletInput : MonoBehaviour
 	{
+		#region --------------------dependencies
 		[SerializeField] Transform _shootingOrigin;
+		#endregion
 
 		#region --------------------unity messages
 		void Start()
