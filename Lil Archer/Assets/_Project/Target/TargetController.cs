@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System;
+using System.Collections;
 
 namespace Project
 {
@@ -13,10 +14,11 @@ namespace Project
 		#endregion
 
 		#region --------------------unity messages
-		void Start()
+		IEnumerator Start()
 		{
 			_statsManager = FindObjectOfType<StatsManager>();
 			_textUI = GetComponentInChildren<TextMeshProUGUI>();
+			yield return null;
 			_textUI.text = String.Format("{0:0.00}", (_shootingOrigin.position - transform.position).magnitude) + "m";
 		}
 
