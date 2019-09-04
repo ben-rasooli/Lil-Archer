@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
+using TMPro;
+using System;
 
 namespace Project
 {
 	public class TargetController : MonoBehaviour
 	{
 		#region --------------------dependencies
+		[SerializeField] Transform _shootingOrigin;
 		StatsManager _statsManager;
+		TextMeshProUGUI _textUI;
 		#endregion
 
 		#region --------------------unity messages
 		void Start()
 		{
 			_statsManager = FindObjectOfType<StatsManager>();
+			_textUI = GetComponentInChildren<TextMeshProUGUI>();
+			_textUI.text = String.Format("{0:0.00}", (_shootingOrigin.position - transform.position).magnitude) + "m";
 		}
 
 		void OnCollisionEnter(Collision collision)
