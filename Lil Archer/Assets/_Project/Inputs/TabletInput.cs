@@ -28,7 +28,7 @@ namespace Project
 					Vector2 touchVector = touchPosition - shootingTouchOrigin;
 					float angle = Vector2.Angle(Vector2.left, touchVector);
 
-					_bow.rotation = Quaternion.Euler(-angle, _bow.eulerAngles.y, _bow.eulerAngles.z);
+                    _shootingOrigin.rotation = Quaternion.Euler(-angle, _bow.eulerAngles.y, _bow.eulerAngles.z);
 				}
 			}
 
