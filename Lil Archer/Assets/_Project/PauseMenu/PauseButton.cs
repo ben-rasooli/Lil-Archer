@@ -23,5 +23,6 @@ public class PauseButton : MonoBehaviour
     public void OnClick()
     {
         m_PauseMenu.SetActive(true);
+
     }
 }

@@ -1,18 +1,27 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ResetButton : MonoBehaviour
+namespace Project
 {
+    public class ResetButton : MonoBehaviour
+    {
+        StatsManager m_StatsManager;
+        Button m_Button;
+
     // Start is called before the first frame update
     void Start()
-    {
-        
-    }
+        {
+            m_StatsManager = FindObjectOfType<StatsManager>();
+            m_Button = GetComponent<Button>();
+            m_Button.onClick.AddListener(OnClick);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void OnClick()
+        {
+            m_StatsManager.Reset();
+        }
     }
 }
