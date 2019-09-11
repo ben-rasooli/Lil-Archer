@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Arrow
+  - projectile
+  - FxTemporaire
+  - Target
+  - Bird
+  - MissedArrow
   layers:
   - Default
   - TransparentFX
