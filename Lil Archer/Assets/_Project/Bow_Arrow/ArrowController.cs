@@ -37,7 +37,8 @@ namespace Project
             
 			if (collision.gameObject.tag == "Arrow")
 				return;
-            tag = "MissedArrow";
+            if (collision.gameObject.tag != "Target")
+                tag = "MissedArrow";
             
 			_rigidbody.useGravity = false;
 			_rigidbody.isKinematic = true;
