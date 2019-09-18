@@ -19,6 +19,12 @@ namespace Project
 			print(distanceToTarget);
 		}
 		int _score;
-		#endregion
-	}
+
+        public void Reset()
+        {
+            _score = 0;
+            _scoreUI.SetText(_score.ToString());
+        }
+        #endregion
+    }
 }

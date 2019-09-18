@@ -34,9 +34,11 @@ namespace Project
 
 		void OnCollisionEnter(Collision collision)
 		{
+            
 			if (collision.gameObject.tag == "Arrow")
 				return;
-
+            tag = "MissedArrow";
+            
 			_rigidbody.useGravity = false;
 			_rigidbody.isKinematic = true;
 		}
