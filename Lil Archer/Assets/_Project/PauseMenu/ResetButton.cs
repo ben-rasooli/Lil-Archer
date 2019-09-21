@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//Added by Jack
+using UnityEngine.SceneManagement;
 
 namespace Project
 {
@@ -22,6 +24,9 @@ namespace Project
         void OnClick()
         {
             m_StatsManager.Reset();
+
+            //Added by Jack
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
