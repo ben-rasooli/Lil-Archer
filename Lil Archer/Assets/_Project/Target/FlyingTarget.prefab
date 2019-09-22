@@ -38,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 6664378701502235836, guid: 950028e2c2f4b13469e6a27aaca98042,
         type: 3}
       propertyPath: m_Name
-      value: FlyingTarget Variant
+      value: FlyingTarget
       objectReference: {fileID: 0}
     - target: {fileID: 7188872864754743102, guid: 950028e2c2f4b13469e6a27aaca98042,
         type: 3}
@@ -118,16 +118,17 @@ PrefabInstance:
     - target: {fileID: 3226512161170636774, guid: 950028e2c2f4b13469e6a27aaca98042,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3226512161170636774, guid: 950028e2c2f4b13469e6a27aaca98042,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1203498441142302502, guid: 950028e2c2f4b13469e6a27aaca98042, type: 3}
     - {fileID: 8651216249265645781, guid: 950028e2c2f4b13469e6a27aaca98042, type: 3}
+    - {fileID: 6631647952195366442, guid: 950028e2c2f4b13469e6a27aaca98042, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 950028e2c2f4b13469e6a27aaca98042, type: 3}
 --- !u!1 &8965972762121882386 stripped
 GameObject:
